@@ -5,3 +5,8 @@ export const Main = styled.main`
     height: 100%;
     flex-grow: 1;
 `
+
+export const SectionWrapper = styled.section`
+    width: 100%;
+    padding: 80px 0;
+`

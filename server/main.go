@@ -8,14 +8,22 @@ import (
 	"strings"
 
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
+	c := cors.New(cors.Options{
+		AllowedOrigins:	[]string{"*"},
+		AllowedMethods: []string{"POST"},
+		AllowedHeaders: []string{"Content-Type"},
+	})
+
 	router := mux.NewRouter()
+	routerHandler := c.Handler(router)
 
 	router.HandleFunc("/api", handlers.CheckAll).Methods("POST")
 
-	port := ":5173"
+	port := ":8080"
 	fmt.Printf("Server is running on port %v\n", strings.TrimLeft(port, ":"))
-	log.Fatal(http.ListenAndServe(port, router))
+	log.Fatal(http.ListenAndServe(port, routerHandler))
 }

@@ -11,7 +11,7 @@ const lightTheme: Theme = {
     weight: {
       light: 300,
       normal: 400,
-      regular: 400,
+      regular: 500,
       semi: 600,
       bold: 700,
     },
@@ -19,6 +19,7 @@ const lightTheme: Theme = {
   colors: {
     primary: '#0070f3',
     background: '#fafafa',
+    secBackground: '#fff',
     text: '#333',
     border: '#ccc',
   },
@@ -29,6 +30,6 @@ const lightTheme: Theme = {
     full: '9999px',
     none: '0px',
   },
-} as const;
+};
 
 export default lightTheme;

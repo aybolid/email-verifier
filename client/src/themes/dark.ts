@@ -11,7 +11,7 @@ const darkTheme: Theme = {
     weight: {
       light: 300,
       normal: 400,
-      regular: 400,
+      regular: 500,
       semi: 600,
       bold: 700,
     },
@@ -19,8 +19,9 @@ const darkTheme: Theme = {
   colors: {
     primary: '#2196f3',
     background: '#202020',
+    secBackground: '#222',
     text: '#f0f0f0',
-    border: '#444',
+    border: '#333',
   },
   rounded: {
     sm: '4px',
@@ -29,6 +30,6 @@ const darkTheme: Theme = {
     full: '9999px',
     none: '0px',
   },
-} as const;
+};
 
 export default darkTheme;

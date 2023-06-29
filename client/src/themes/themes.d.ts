@@ -24,7 +24,7 @@ type Typography = {
   weight: {
     light: 300;
     normal: 400;
-    regular: 400;
+    regular: 500;
     semi: 600;
     bold: 700;
   };
@@ -33,6 +33,7 @@ type Typography = {
 type Colors = {
   primary: string;
   background: string;
+  secBackground: string;
   text: string;
   border: string;
 };
