@@ -28,6 +28,7 @@ const Providers = ({
             styles={css`
               ${emotionReset}
               body {
+                overflow-x: hidden;
                 font-family: 'Noto Sans KR', sans-serif;
                 font-size: ${theme.typography.size.lg};
                 color: ${theme.colors.text};

@@ -45,7 +45,7 @@ export default function DataInput() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading) return;
-    if (!inputRef.current) return;
+    if (!inputRef.current || !inputRef.current.value) return;
 
     let toCheck: string[];
     if (verifySeveral) {
@@ -82,11 +82,7 @@ export default function DataInput() {
               ref={inputRef as React.RefObject<HTMLInputElement>}
               type="text"
             />
-            <button
-              disabled={!inputRef.current?.value || isLoading}
-              type="submit"
-              className="submit-btn-1"
-            >
+            <button disabled={isLoading} type="submit" className="submit-btn-1">
               Check
             </button>
           </>
@@ -97,11 +93,7 @@ export default function DataInput() {
               placeholder="one@mail.com, two@mail.com..."
               className="textarea"
             />
-            <button
-              disabled={!inputRef.current?.value || isLoading}
-              type="submit"
-              className="submit-btn-2"
-            >
+            <button disabled={isLoading} type="submit" className="submit-btn-2">
               Check
             </button>
           </>

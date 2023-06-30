@@ -1,6 +1,7 @@
 export interface VerifierResponse {
   domains_checked: string[] | null;
   results: VerifierResult[] | null;
+  message?: string;
 }
 
 export interface VerifierResult {

@@ -52,4 +52,14 @@ export const ResultsContainer = styled.div`
       }
     }
   }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    & > .results {
+      width: 100%;
+    }
+  }
 `;

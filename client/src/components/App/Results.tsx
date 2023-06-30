@@ -60,6 +60,15 @@ export default function Results() {
           />
         </div>
       )}
+      {result.message &&  <p
+          css={css`
+            color: #ff0000;
+            width: 100%;
+            text-align: center;
+          `}
+        >
+          {result.message}
+        </p>}
       {result.domains_checked && result.domains_checked.length > 0 && (
         <ResultsContainer>
           <div className="domains">
@@ -72,7 +81,6 @@ export default function Results() {
               ))}
             </ul>
           </div>
-
           <div className="results">
             <table>
               <thead>

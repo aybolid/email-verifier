@@ -1,12 +1,13 @@
-import Layout from './components/Layout';
-import DataInput from './components/App/DataInput';
-import Results from './components/App/Results';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import VerifyOne from './routes/VerifyOne';
 
 export default function App() {
   return (
-    <Layout>
-      <DataInput />
-      <Results />
-    </Layout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<VerifyOne />} />
+        {/* <Route path="/several" element={<VerifySeveral />} /> */}
+      </Routes>
+    </Router>
   );
 }

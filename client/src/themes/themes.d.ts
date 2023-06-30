@@ -2,6 +2,7 @@ import '@emotion/react';
 
 declare module '@emotion/react' {
   export interface Theme {
+    breakpoints: Breakpoints;
     typography: Typography;
     colors: Colors;
     rounded: Rounded;
@@ -12,7 +13,14 @@ interface Theme {
   typography: Typography;
   colors: Colors;
   rounded: Rounded;
+  breakpoints: Breakpoints;
 }
+
+type Breakpoints = {
+  sm: '576px';
+  md: '768px';
+  lg: '992px';
+};
 
 type Typography = {
   size: {
@@ -36,6 +44,8 @@ type Colors = {
   secBackground: string;
   text: string;
   border: string;
+  success: string;
+  danger: string;
 };
 
 type Rounded = {

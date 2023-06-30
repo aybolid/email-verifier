@@ -1,40 +1,31 @@
 import styled from '@emotion/styled';
 
-export const DataInputWrapper = styled.div`
+export const DataInputOneWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 16px;
-  & > .title {
+  .title {
     font-weight: ${({ theme }) => theme.typography.weight.regular};
     font-size: 2rem;
+    & > span {
+      color: ${({ theme }) => theme.colors.primary};
+      font-weight: ${({ theme }) => theme.typography.weight.semi};
+    }
   }
-  & > .form {
+  .form {
     margin-top: 24px;
     width: 100%;
     max-width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & > .textarea {
-      min-height: 300px;
-      font-family: inherit;
-      outline: none;
-      color: ${({ theme }) => theme.colors.text};
-      font-size: 1.5rem;
-      padding: 0 16px;
-      border: 2px solid ${({ theme }) => theme.colors.border};
-      border-radius: ${({ theme }) => theme.rounded.md};
+    .input-wrapper {
       width: 100%;
-      background-color: ${({ theme }) => theme.colors.secBackground};
-      resize: vertical;
-      &:focus {
-        border-color: ${({ theme }) => theme.colors.primary};
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    & > .input {
+    .input {
       outline: none;
       color: ${({ theme }) => theme.colors.text};
       font-size: 1.5rem;
@@ -50,7 +41,7 @@ export const DataInputWrapper = styled.div`
         border-color: ${({ theme }) => theme.colors.primary};
       }
     }
-    & > .submit-btn-1 {
+    .submit-btn {
       height: 51px;
       color: ${({ theme }) => theme.colors.secBackground};
       font-size: 1.5rem;
@@ -72,30 +63,14 @@ export const DataInputWrapper = styled.div`
         pointer-events: none;
       }
     }
-    & > .submit-btn-2 {
-      margin-top: 16px;
-      height: 51px;
-      color: ${({ theme }) => theme.colors.secBackground};
-      font-size: 1.5rem;
-      font-weight: ${({ theme }) => theme.typography.weight.regular};
-      padding: 0 16px;
-      border-radius: ${({ theme }) => theme.rounded.md};
-      border: none;
-      background-color: ${({ theme }) => theme.colors.primary};
-      transition: transform 150ms ease-in-out;
-      &:hover {
-        transform: scale(1.05);
-      }
-      &:active {
-        transform: scale(1);
-      }
-      &:disabled {
-        opacity: 0.6;
-        pointer-events: none;
-      }
-    }
   }
-  & > .toggler {
+  .error {
+    color: ${({ theme }) => theme.colors.danger};
+    font-size: ${({ theme }) => theme.typography.size.sm};
+    margin-top: 4px;
+  }
+  .link {
+    text-decoration: none;
     background-color: transparent;
     outline: none;
     border: none;

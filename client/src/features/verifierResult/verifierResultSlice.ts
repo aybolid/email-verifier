@@ -4,15 +4,15 @@ import type { RootState } from '../../app/store';
 import type { VerifierResponse } from '../../interfaces/VerifierResponse';
 
 interface VerifierResultState {
-  result: VerifierResponse;
+  data: VerifierResponse;
   isError: boolean;
   isLoading: boolean;
 }
 
 const initialState: VerifierResultState = {
-  result: {
-    domains_checked: [],
-    results: [],
+  data: {
+    domains_checked: null,
+    results: null,
   },
   isError: false,
   isLoading: false,
@@ -22,34 +22,32 @@ export const verifierResultSlice = createSlice({
   name: 'verifierResult',
   initialState,
   reducers: {
-    setResult: (state, action: PayloadAction<VerifierResponse>) => {
-      state.result = action.payload;
-
-      state.isError = false;
-      state.isLoading = false;
+    setData: (state, action: PayloadAction<VerifierResponse>) => {
+      if (action.payload) {
+        state.data = action.payload;
+      }
     },
     setIsLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
-
-      state.isError = false;
-      state.result = initialState.result;
     },
     setIsError: (state, action: PayloadAction<boolean>) => {
       state.isError = action.payload;
-
+    },
+    reset: (state) => {
+      state.isError = false;
       state.isLoading = false;
-      state.result = initialState.result;
+      state.data = initialState.data;
     },
   },
 });
 
-export const { setResult, setIsLoading, setIsError } =
+export const { setData, setIsLoading, setIsError, reset } =
   verifierResultSlice.actions;
 
 export const selectVerifierResult = (state: RootState) => ({
   isError: state.verifierResult.isError,
   isLoading: state.verifierResult.isLoading,
-  result: state.verifierResult.result,
+  data: state.verifierResult.data,
 });
 
 export default verifierResultSlice.reducer;
