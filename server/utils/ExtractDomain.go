@@ -1,23 +1,13 @@
 package utils
 
-import ("strings")
+import (
+	"strings"
+)
 
-func ExtractDomains(slice []string) []string {
-	var domains []string
-	seenDomains := make(map[string]bool)
-
-	for _, s := range slice {
-		if strings.Contains(s, "@") {
-			s = GetDomainFromEmail(s)
-		}
-
-		if seenDomains[s] || !IsDomain(s) {
-			continue
-		}
-
-		domains = append(domains, s)
-		seenDomains[s] = true
+func ExtractDomain(email string) string {
+	parts := strings.Split(email, "@")
+	if len(parts) == 2 {
+		return parts[1]
 	}
-
-	return domains
+	return ""
 }

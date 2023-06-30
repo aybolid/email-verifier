@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func SPF(domain string) (bool, string, error) {
+func HasSPF(domain string) (bool, string, error) {
 	hasSPF := false
 	spfRecord := ""
 

@@ -21,7 +21,7 @@ func main() {
 	router := mux.NewRouter()
 	routerHandler := c.Handler(router)
 
-	router.HandleFunc("/api", handlers.CheckAll).Methods("POST")
+	router.HandleFunc("/api/verify-one", handlers.VerifyOne).Methods("POST")
 
 	port := ":8080"
 	fmt.Printf("Server is running on port %v\n", strings.TrimLeft(port, ":"))

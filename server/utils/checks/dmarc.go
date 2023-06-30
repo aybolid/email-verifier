@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func DMARC(domain string) (bool, string, error) {
+func HasDMARC(domain string) (bool, string, error) {
 	hasDMARC := false
 	dmarcRecord := ""
 
