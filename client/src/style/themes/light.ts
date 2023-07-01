@@ -1,7 +1,7 @@
 import base from './base';
-import type { Theme } from './themes';
+import MyTheme from './themes';
 
-const lightTheme: Theme = {
+const lightTheme: MyTheme = {
   ...base,
   colors: {
     primary: '#0070f3',
@@ -11,6 +11,7 @@ const lightTheme: Theme = {
     border: '#ccc',
     success: '#4caf50',
     danger: '#ff0000',
+    accent: '#ffc107',
   },
 };
 

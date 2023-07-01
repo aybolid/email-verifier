@@ -1,9 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import verifierResultReducer from '../features/verifierResult/verifierResultSlice';
-
 export const store = configureStore({
-  reducer: { verifierResult: verifierResultReducer },
+  reducer: {},
 });
 
 export type RootState = ReturnType<typeof store.getState>;
