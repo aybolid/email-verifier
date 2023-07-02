@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import verifySingleEmailReducer from '@src/features/verifySingleEmail/verifySingleEmailSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    verifySingleEmail: verifySingleEmailReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

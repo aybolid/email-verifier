@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const HeroWrapper = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 3rem;
   & > .content {
     display: flex;
@@ -50,6 +50,15 @@ export const HeroWrapper = styled.div`
     height: 700px;
     & > .img {
       width: 100%;
+      @media screen and (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+        height: 300px;
+      }
     }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+      height: auto;
+    }
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `;

@@ -5,6 +5,7 @@ import (
 	"emailverifier/utils"
 	"emailverifier/utils/checks"
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -12,12 +13,16 @@ func VerifyOne(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	var email string
-	json.NewDecoder(r.Body).Decode(&email)
+	err :=json.NewDecoder(r.Body).Decode(&email)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	if email == "" {
 		err := models.HintError{Message: "Email is empty", Hint: "Provide an email"}
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err)
+		return
 	}
 
 	domain := utils.ExtractDomain(email)

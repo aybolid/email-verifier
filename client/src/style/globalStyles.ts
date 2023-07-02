@@ -6,6 +6,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const theme = prefersDark ? darkTheme : lightTheme;
 
 const globalStyles = css`
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Roboto+Condensed:wght@300;400;700&display=swap');
   *,
   *::after,
   *::before {
@@ -14,8 +15,9 @@ const globalStyles = css`
     -webkit-font-smoothing: antialiased;
   }
   body {
+    scroll-behavior: smooth;
     overflow-x: hidden;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
     color: ${theme.colors.text};
     background-color: ${theme.colors.background};

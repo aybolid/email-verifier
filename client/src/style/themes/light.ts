@@ -7,7 +7,7 @@ const lightTheme: MyTheme = {
     primary: '#0070f3',
     background: '#fafafa',
     secBackground: '#fff',
-    text: '#333',
+    text: '#555',
     border: '#ccc',
     success: '#4caf50',
     danger: '#ff0000',

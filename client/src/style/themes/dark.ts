@@ -7,7 +7,7 @@ const darkTheme: MyTheme = {
     primary: '#2196f3',
     background: '#202020',
     secBackground: '#222',
-    text: '#f0f0f0',
+    text: '#d0d0d0',
     border: '#333',
     success: '#4caf50',
     danger: '#f44336',
