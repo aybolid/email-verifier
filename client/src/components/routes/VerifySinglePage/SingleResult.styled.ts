@@ -198,6 +198,15 @@ export const ResultContent = styled.div<ResultContentProps>`
           opacity: 0.6;
         }
       }
+      @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        grid-column: span 1;
+      }
+    }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
 `;
@@ -273,6 +282,9 @@ export const MxResultWrapper = styled.div<MxResultContentProps>`
       opacity: 0.6;
     }
   }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-column: span 1;
+  }
 `;
 
 interface TotalWrapperProps {
@@ -330,5 +342,8 @@ export const TotalWrapper = styled.div<TotalWrapperProps>`
       font-size: 0.8rem;
       opacity: 0.6;
     }
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-column: span 1;
   }
 `;

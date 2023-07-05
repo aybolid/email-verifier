@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import IndexPage from '@src/routes/IndexPage';
 import Layout from './components/Layout';
 import VerifySinglePage from './routes/VerifySinglePage';
+import VerifySeveralPage from './routes/VerifySeveralPage';
 
 export default function App() {
   return (
@@ -17,14 +18,7 @@ export default function App() {
           }
         />
         <Route path="/verify" element={<VerifySinglePage />} />
-        <Route
-          path="/verify/several"
-          element={
-            <Layout>
-              <div>verify several</div>
-            </Layout>
-          }
-        />
+        <Route path="/verify/several" element={<VerifySeveralPage />} />
       </Routes>
     </Router>
   );

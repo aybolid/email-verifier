@@ -8,6 +8,7 @@ export const DataInputWrapper = styled.div`
   gap: 1rem;
   width: 100%;
   & > h2 {
+    text-align: center;
     font-size: 2rem;
     & > span {
       font-weight: 600;
