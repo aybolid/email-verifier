@@ -9,6 +9,11 @@ type OneEmailRes struct {
 	DNS *DNS `json:"dns"`
 }
 
+type SeveralEmailsRes struct {
+	Emails []string `json:"emails"`
+	Results []OneEmailRes `json:"results"`
+}
+
 type DNS struct {
 	MX *MX `json:"mx"`
 	SPF *SPF `json:"spf"`
