@@ -274,3 +274,61 @@ export const MxResultWrapper = styled.div<MxResultContentProps>`
     }
   }
 `;
+
+interface TotalWrapperProps {
+  data: OneEmailRes;
+  totalScore: number;
+}
+
+export const TotalWrapper = styled.div<TotalWrapperProps>`
+  grid-column: span 2;
+  & > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: ${({ theme, totalScore }) =>
+      totalScore > 0
+        ? totalScore < 4
+          ? theme.colors.accent
+          : theme.colors.success
+        : theme.colors.danger};
+    & > span {
+      margin-top: 4px;
+    }
+  }
+  & > div {
+    padding: 1rem;
+    background-color: ${({ theme }) => theme.colors.secBackground};
+    border-radius: ${({ theme }) => theme.rounded.md};
+    border: 2px solid
+      ${({ theme, totalScore }) =>
+        totalScore > 0
+          ? totalScore < 4
+            ? theme.colors.accent
+            : theme.colors.success
+          : theme.colors.danger};
+    box-shadow: 0 4px 4px #00000030;
+    & > .score {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 4.5rem;
+      font-weight: 600;
+      color: ${({ theme, totalScore }) =>
+        totalScore > 0
+          ? totalScore < 4
+            ? theme.colors.accent
+            : theme.colors.success
+          : theme.colors.danger};
+    }
+    & > .info {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+  }
+`;

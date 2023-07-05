@@ -9,6 +9,7 @@ import { MdCopyAll } from 'react-icons/md';
 import FormatCheckResult from './FormatCheckResult';
 import SpfDmarcCheckResult from './SpfDmarcCheckResult';
 import MxCheckResult from './MxCheckResult';
+import Total from './Total';
 
 export default function SingleResult() {
   const { isLoading, isError, result } = useAppSelector(selectAll);
@@ -83,6 +84,7 @@ export default function SingleResult() {
                 <FormatCheckResult result={result} />
                 <SpfDmarcCheckResult result={result} />
                 <MxCheckResult result={result} />
+                <Total result={result} />
               </div>
             )}
           </ResultContent>

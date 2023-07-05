@@ -1,12 +1,14 @@
 import { css } from '@emotion/react';
 import darkTheme from './themes/dark';
 import lightTheme from './themes/light';
+import emotionReset from 'emotion-reset';
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const theme = prefersDark ? darkTheme : lightTheme;
 
 const globalStyles = css`
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Roboto+Condensed:wght@300;400;700&display=swap');
+  ${emotionReset}
   *,
   *::after,
   *::before {

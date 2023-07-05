@@ -8,7 +8,6 @@ const REQ: RequestInit = {
 };
 
 const verifySingle = async (email: string) => {
-  console.log('email: ', email);
   const result: OneEmailRes = await fetch(URL, {
     ...REQ,
     body: JSON.stringify(email),

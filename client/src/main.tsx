@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { Global, css, ThemeProvider } from '@emotion/react';
-import emotionReset from 'emotion-reset';
 import { globalStyles, theme } from '@style/globalStyles';
 
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
@@ -33,7 +32,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Providers>
       <Global
         styles={css`
-          ${emotionReset}
           ${globalStyles}
         `}
       />
