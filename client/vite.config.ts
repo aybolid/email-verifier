@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/v1': {
-        target: 'http://localhost:8080',
+        target: 'https://email-verifier-392008.lm.r.appspot.com',
         changeOrigin: true,
         secure: false,
       },
