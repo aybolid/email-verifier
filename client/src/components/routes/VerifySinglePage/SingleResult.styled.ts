@@ -268,7 +268,6 @@ export const MxResultWrapper = styled.div<MxResultContentProps>`
             opacity: 0.9;
             border: 1px solid ${({ theme }) => theme.colors.text};
             padding: 0.5rem 1rem;
-            /* even */
             &:nth-child(even) {
               text-align: center;
             }

@@ -1,5 +1,6 @@
 import Layout from '@src/components/Layout';
 import DataInputSeveral from '@src/components/routes/VerifySeveralPage/DataInputSeveral';
+import ResultTable from '@src/components/routes/VerifySeveralPage/ResultTable';
 import { Helmet } from 'react-helmet';
 
 const SEO = (): JSX.Element => (
@@ -20,6 +21,7 @@ export default function VerifySeveralPage() {
       <SEO />
       <Layout>
         <DataInputSeveral />
+        <ResultTable />
       </Layout>
     </>
   );

@@ -2,19 +2,10 @@ import React from 'react';
 import { OneEmailRes } from '@src/interfaces/OneEmailRes';
 import { TotalWrapper } from './SingleResult.styled';
 import { MdCheck, MdError } from 'react-icons/md';
+import calcTotalScore from '@src/utils/calcTotalScore';
 
 export default function Total({ result }: { result: OneEmailRes }) {
-  const totalScore = React.useMemo(() => {
-    const {
-      dns: { mx, dmarc, spf },
-    } = result;
-    let totalScore = 0;
-    if (result.format) totalScore++;
-    if (mx.status) totalScore++;
-    if (spf.status) totalScore++;
-    if (dmarc.status) totalScore++;
-    return totalScore;
-  }, [result]);
+  const totalScore = React.useMemo(() => calcTotalScore(result), [result]);
 
   return (
     <TotalWrapper data={result} totalScore={totalScore}>

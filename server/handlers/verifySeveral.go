@@ -32,8 +32,13 @@ func VerifySeveral(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var results []models.OneEmailRes
+	var ckeckedEmails []string;
 
 	for _, email := range emails {
+		if utils.Contains(ckeckedEmails, email) || email == "" {
+			continue
+		}
+
 		domain := utils.ExtractDomain(email)
 
 		format := checks.IsValidFormat(email)
@@ -60,6 +65,7 @@ func VerifySeveral(w http.ResponseWriter, r *http.Request) {
 				},
 			},
 		}
+		ckeckedEmails = append(ckeckedEmails, email)
 		results = append(results, response)
 	}
 
